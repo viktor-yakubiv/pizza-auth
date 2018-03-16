@@ -4,8 +4,15 @@ import routes from './routes'
 
 import './style/index.css'
 
-const router = new Router(routes)
+import config from './config'
+import setup from './setup'
+
 
 const root = clearChildren(document.getElementById('root'))
 
-root.appendChild(router.host)
+if (config.store) {
+  const router = new Router(routes)
+  root.appendChild(router.host)
+} else {
+  setup(root)
+}

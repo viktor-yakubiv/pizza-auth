@@ -1,0 +1,16 @@
+label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+input[type=text],
+input[type=search],
+input[type=password],
+select,
+textarea {
+  display: block;
+  box-sizing: border-box;
+  padding: .5rem 1rem;
+  width: 100%;
+}
