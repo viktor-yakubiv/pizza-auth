@@ -1,5 +1,5 @@
 const DayWeekForecast = ({ main }) => {
-  const { temp, humidity, pressure } = main;
+  const { temp, humidity, pressure } = main
 
   return `
     <div class='forecast'>
@@ -7,7 +7,7 @@ const DayWeekForecast = ({ main }) => {
       <p class='humidity'>humidity: ${humidity}</p>
       <p class='pressure'>pressure: ${pressure}</p>
     </div>
-  `;
-};
+  `
+}
 
-export default DayWeekForecast;
+export default DayWeekForecast

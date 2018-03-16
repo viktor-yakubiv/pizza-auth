@@ -1,55 +1,55 @@
-import { toHtml, bindAll, clearChildren, append } from '../utils';
+import { toHtml, bindAll, clearChildren, append } from '../utils'
 
 class Component {
   constructor(props) {
-    this.state = {};
-    this.props = props || {};
-    this.host = null;
+    this.state = {}
+    this.props = props || {}
+    this.host = null
 
-    bindAll(this, 'updateState', 'update');
+    bindAll(this, 'updateState', 'update')
   }
 
   _render() {
-    const html = this.render();
+    const html = this.render()
 
     if (!html && this.host) {
-      return this.host;
+      return this.host
     }
 
     if (typeof html === 'string') {
-      return append(clearChildren(this.host), toHtml(html));
-    } else {
-      return append(clearChildren(this.host), html);
+      return append(clearChildren(this.host), toHtml(html))
     }
+    return append(clearChildren(this.host), html)
   }
 
   get name() {
-    return this.constructor.name;
+    return this.constructor.name
   }
 
+  // eslint-disable-next-line
   onBeforeUpdate(nextProps) {}
   onBeforeUnmount() {}
 
   unmount() {
-    this.onBeforeUnmount();
+    this.onBeforeUnmount()
   }
 
   update(nextProps) {
-    this.onBeforeUpdate(nextProps);
-    this.props = nextProps;
-    return this._render();
+    this.onBeforeUpdate(nextProps)
+    this.props = nextProps
+    return this._render()
   }
 
   updateState(state) {
-    const nextState = Object.assign({}, this.state, state);
+    const nextState = Object.assign({}, this.state, state)
 
-    this.state = nextState;
-    this._render();
+    this.state = nextState
+    this._render()
 
-    return nextState;
+    return nextState
   }
 
   render() {}
 }
 
-export default Component;
+export default Component

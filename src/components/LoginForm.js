@@ -1,11 +1,11 @@
-import { Component } from '../framework';
+import { Component } from '../framework'
 
 class LoginForm extends Component {
   constructor() {
-    super();
+    super()
 
-    this.host = document.createElement('div');
-    this.host.classList.add('form-login-container');
+    this.host = document.createElement('div')
+    this.host.classList.add('form-login-container')
   }
 
   render() {
@@ -16,8 +16,8 @@ class LoginForm extends Component {
         <input type='password' name='password' />
       </form>
       <a href='#/'>Go to main</a>
-    `;
+    `
   }
 }
 
-export default LoginForm;
+export default LoginForm

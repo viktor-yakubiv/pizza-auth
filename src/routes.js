@@ -1,5 +1,5 @@
-import App from './App';
-import LoginForm from './components/LoginForm';
+import App from './App'
+import LoginForm from './components/LoginForm'
 
 export default [
   {
@@ -10,4 +10,4 @@ export default [
     href: '/login',
     component: LoginForm,
   },
-];
+]

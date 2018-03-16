@@ -1,17 +1,15 @@
-import { Component } from '../framework';
-
-import { noop, toHtml } from '../utils';
+import { Component } from '../framework'
 
 class TodayForecast extends Component {
   constructor() {
-    super();
+    super()
 
-    this.host = document.createElement('div');
-    this.host.classList.add('today-forecast-container');
+    this.host = document.createElement('div')
+    this.host.classList.add('today-forecast-container')
   }
 
   render() {
-    const { name, main } = this.props.forecast;
+    const { name, main } = this.props.forecast
 
     return `
       <h1 class='city-name'>${name}</h1>
@@ -20,8 +18,8 @@ class TodayForecast extends Component {
         <span class='humidity'>${main.humidity}</span>
         <span class='pressure'>${main.pressure}</span>
       </div>
-    `;
+    `
   }
 }
 
-export default TodayForecast;
+export default TodayForecast
