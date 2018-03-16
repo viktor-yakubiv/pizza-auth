@@ -1,6 +1,6 @@
-import Component from './Component'
+import { Component } from '../lib'
 
-import { isEqualPaths, extractUrlParams } from '../utils'
+import { isEqualPaths, extractUrlParams } from '../lib/utils'
 
 const ANY_PATH = '*'
 

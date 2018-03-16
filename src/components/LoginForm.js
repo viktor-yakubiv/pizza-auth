@@ -1,4 +1,5 @@
-import { Component } from '../framework'
+import { Component } from '../../lib'
+import './LoginForm.css'
 
 class LoginForm extends Component {
   constructor() {
@@ -10,12 +11,13 @@ class LoginForm extends Component {
 
   render() {
     return `
-      <h3>Pizza application</h3>
+      <h3>Pizza App</h3>
       <form>
-        <input type='text' name='login'/>
-        <input type='password' name='password' />
+        <input name="login">
+        <input type="password" name="password">
       </form>
-      <a href='#/'>Go to main</a>
+
+      <a href='#/'>Home page</a>
     `
   }
 }
