@@ -10,9 +10,11 @@
     "babel-eslint": "^8.2.2",
     "eslint": "^4.18.2",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0"
+    "eslint-plugin-import": "^2.9.0",
+    "parcel-bundler": "^1.6.2"
   },
   "scripts": {
+    "start": "parcel -p 3000 index.html",
     "test": "eslint src"
   }
 }
