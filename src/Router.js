@@ -5,9 +5,8 @@ import { isEqualPaths, extractUrlParams } from '../lib/utils'
 const ANY_PATH = '*'
 
 class Router extends Component {
-  constructor(routes) {
-    super()
-
+  constructor({ routes, ...transferProps }) {
+    super(transferProps)
     this.state = {
       activeRoute: null,
       activeComponent: null,
@@ -18,7 +17,11 @@ class Router extends Component {
 
     window.addEventListener('hashchange', this.handleUrlChange.bind(this))
 
-    this.handleUrlChange()
+    if (window.location.hash === '') {
+      window.location.hash = '#/'
+    } else {
+      this.handleUrlChange()
+    }
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -83,8 +86,16 @@ class Router extends Component {
   }
 
   render() {
-    return this.state.activeComponent.update()
+    return this.state.activeComponent.update({
+      route: this.state.activeRoute,
+      ...this.props,
+    })
   }
 }
 
+const redirect = (url) => {
+  window.location.hash = `#${url}`
+}
+
 export default Router
+export { redirect }

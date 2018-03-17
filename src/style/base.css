@@ -4,8 +4,9 @@ label {
   font-weight: bold;
 }
 
+input:not([type]),
 input[type=text],
-input[type=search],
+input[type=email],
 input[type=password],
 select,
 textarea {
