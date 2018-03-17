@@ -18,7 +18,7 @@ class Dashboard extends Component {
   }
 
   render() {
-    return 'Hello, World!'
+    return '<p>Hello, World!<p><a href="#/logout">Logout</a>'
   }
 }
 

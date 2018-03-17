@@ -63,7 +63,7 @@ class Router extends Component {
     const { href } = nextRoute
     const params = extractUrlParams(href, url)
 
-    nextRoute.onEnter(params, this.handleRedirect, nextRoute)
+    nextRoute.onEnter(params, this.handleRedirect, nextRoute, this.props)
   }
 
   applyRoute(route) {

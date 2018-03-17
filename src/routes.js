@@ -9,7 +9,10 @@ export default [
   },
   {
     href: '/logout',
-    onEnter: () => {
+    onEnter: (params, redirect, nextRoute, props) => {
+      const { api } = props
+      api.logout()
+      redirect('/login')
     },
   },
   {

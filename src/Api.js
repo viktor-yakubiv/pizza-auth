@@ -56,6 +56,7 @@ class Api {
 
   logout() {
     delete this.defaultHeaders.authorization
+    window.localStorage.token = null
   }
 
   login(username, password) {
